@@ -40,5 +40,15 @@ Ini adalah langkah jika odrive belum ada firmwarenya (masih baru), jika sudah ad
    
    `dev0.vbus_voltage`
 
+### **Perhatian**
+jika selama setting terdapat malfunction atau step fails, kita bisa mengetahui errornya dengan menggunakan prompt
+
+`running dump_errors(dev0)`
+setalah error berhasil diatasi selanjutnya clear error
+
+`odrv0.clear_errors()`
+
+clear error ini harus dilakukan setiap kali selesai mengecek error baru setelah itu bisa melanjutkan ke step berikutnya
+
 ## **Konfigurasi Motor**
 in adalah step pertama yaitu konfigurasi motor dan melakukan kalibrasi
