@@ -11,3 +11,4 @@
 
 ## **Firmware**
 Ini adalah langkah jika odrive belum ada firmwarenya (masih baru), jika sudah ada firmwarenya maka lewati langkah ini
+1. Firmware yang kita pakai menggunakan firmware versi 0.5.4 maka download dulu file .elf pada [Link Berikut](https://docs.odriverobotics.com/releases/firmware) lalu pilih versi "ODrive v3.5-24V"
