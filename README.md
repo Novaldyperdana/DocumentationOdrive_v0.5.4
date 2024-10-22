@@ -2,7 +2,6 @@
 
 ##**DOWNLOADING AND INSTALLING ODRIVETOOL**
 1. Install python3
-
-install saja ges
+   install saja ges
 
   `sudo apt install python3 python3-pip`
