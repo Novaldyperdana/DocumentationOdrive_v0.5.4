@@ -24,7 +24,8 @@ Ini adalah langkah jika odrive belum ada firmwarenya (masih baru), jika sudah ad
    `odrivetool`
    
    maka akan muncul contoh berikut
-   `novaldy@novaldy:~$ odrivetool
+   ```
+   novaldy@novaldy:~$ odrivetool
    ODrive control utility v0.6.9.post0
    Website: https://odriverobotics.com/
    Docs: https://docs.odriverobotics.com/
@@ -34,8 +35,10 @@ Ini adalah langkah jika odrive belum ada firmwarenya (masih baru), jika sudah ad
    Please connect your ODrive.
    You can also type help() or quit().
    Device 365230553436: Not a genuine ODrive! Some features may not work as expected.
-   Connected to device 365230553436 as dev0`
+   Connected to device 365230553436 as dev0
+
    
+   ```
    dev0 adalah nama dari odrive yang kita pakai, kalau di windows akan terbaca odrv0
 
 3. ketikkan command berikut untuk mengetahui berapa voltase dari motor kita
