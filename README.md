@@ -56,6 +56,59 @@ Setelah ini adalah step by step setting motor. variabel yang digunakan merupakan
 ## **Konfigurasi Motor**
 in adalah step pertama yaitu konfigurasi motor dan melakukan kalibrasi. diasumsikan motor yang terhubung ke odrive adalah Motor0 (axis0). untuk mensetting Motor1,Motor2 dst tinggal mengganti axis0 menjadi axis1 dst
 
-###**Setting Current Limit**
+### **Setting Current Limit**
 
 `dev0.axis0.motor.config.current_lim = 60`
+
+### **Setting Velocity Limit**
+(turn/s) / rotasi perdetik
+motor akan dibatasi maksimal 20 rotation/s
+
+`dev0.axis0.controller.config.vel_limit = 20`
+
+### **Callibration current**
+largest value you feel comfortable leaving running through the motor continuously when the motor is stationary.
+
+`dev0.axis0.motor.config.calibration_current = 4`
+
+### **Setting Negative Current**
+
+`dev0.config.dc_max_negative_current = -20`
+
+### **Setting max regen current**
+
+`dev0.config.max_regen_current`
+
+### **Setting Pole Pairs**
+`dev0.axis0.motor.config.pole_pairs = 7`
+
+### **Setting Torque Constant**
+This is the ratio of torque produced by the motor per Amp of current delivered to the motor. This should be set to 8.27 / (motor KV).
+
+dev0.axis0.motor.config.torque_constant = 1
+
+### **Calibration Motor**
+save konfigurasi
+`odrv0.save_configuration()`
+
+ketik command berikut untuk kalibrasi motor
+
+`dev0.axis0.requested_state = AXIS_STATE_MOTOR_CALIBRATION`
+
+kalibrasi berhasil ditandai dengan bunyi beep panjang dan bunyi keras pada motor, jika tidak bunyi atau beep pelan maka masih ada error, cek errornya
+
+## **Konfigurasi Encoder**
+jika motor tidak ada encoder maka motor tidak akan bisa berjalan
+
+### **Set the encoder count per revolution [CPR] value**
+This is 4x the Pulse Per Revolution (PPR) value.
+
+`dev0.axis0.encoder.config.cpr = 4000`
+
+setelah itu save configuration
+
+## **Position Control**
+
+`dev0.axis0.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE`
+
+motor mengelurkan bunyi beep dan berputar ke kiri dan kekanan. jika motor tidak berputar maka masih ada error
