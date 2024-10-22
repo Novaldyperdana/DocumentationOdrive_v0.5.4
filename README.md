@@ -40,16 +40,22 @@ Ini adalah langkah jika odrive belum ada firmwarenya (masih baru), jika sudah ad
    
    `dev0.vbus_voltage`
 
-### **Perhatian**
+## **Perhatian**
 jika selama setting terdapat malfunction atau step fails, kita bisa mengetahui errornya dengan menggunakan prompt
 
 `running dump_errors(dev0)`
 
 setelah error berhasil diatasi selanjutnya clear error
 
-`odrv0.clear_errors()`
+`dev0.clear_errors()`
 
 clear error ini harus dilakukan setiap kali selesai mengecek error baru setelah itu bisa melanjutkan ke step berikutnya
 
+Setelah ini adalah step by step setting motor. variabel yang digunakan merupakan contoh untuk motor jenis **Turbo D4245 dengan encoder AS5047P custom**. untuk jenis motor dan encoder lain silahkan disesuaikan saja, jika documentation ini kurang jelas maka langsung ke web odrivenya langsung di [link berikut](https://docs.odriverobotics.com/v/0.5.4/getting-started.html)
+
 ## **Konfigurasi Motor**
-in adalah step pertama yaitu konfigurasi motor dan melakukan kalibrasi
+in adalah step pertama yaitu konfigurasi motor dan melakukan kalibrasi. diasumsikan motor yang terhubung ke odrive adalah Motor0 (axis0). untuk mensetting Motor1,Motor2 dst tinggal mengganti axis0 menjadi axis1 dst
+
+###**Setting Current Limit**
+
+`dev0.axis0.motor.config.current_lim = 60`
