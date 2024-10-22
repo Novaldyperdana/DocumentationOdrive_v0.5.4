@@ -2,4 +2,4 @@
 
 ##**DOWNLOADING AND INSTALLING ODRIVETOOL**
 1. Install python3
-`sudo apt install python3 python3-pip`
+  `sudo apt install python3 python3-pip`
