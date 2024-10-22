@@ -1,3 +1,5 @@
 # DocumentationOdrive_v0.5.4
 
-INSTALLATION UBUNTU 22.04 VERSION
+DOWNLOADING AND INSTALLING ODRIVETOOL
+1. Install python3
+    sudo apt install python3 python3-pip
