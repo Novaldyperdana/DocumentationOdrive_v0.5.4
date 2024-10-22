@@ -44,7 +44,8 @@ Ini adalah langkah jika odrive belum ada firmwarenya (masih baru), jika sudah ad
 jika selama setting terdapat malfunction atau step fails, kita bisa mengetahui errornya dengan menggunakan prompt
 
 `running dump_errors(dev0)`
-setalah error berhasil diatasi selanjutnya clear error
+
+setelah error berhasil diatasi selanjutnya clear error
 
 `odrv0.clear_errors()`
 
