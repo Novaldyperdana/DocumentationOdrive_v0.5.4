@@ -87,7 +87,7 @@ largest value you feel comfortable leaving running through the motor continuousl
 ### **Setting Torque Constant**
 This is the ratio of torque produced by the motor per Amp of current delivered to the motor. This should be set to 8.27 / (motor KV).
 
-dev0.axis0.motor.config.torque_constant = 1
+`dev0.axis0.motor.config.torque_constant = 1`
 
 ### **Calibration Motor**
 save konfigurasi
