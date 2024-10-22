@@ -83,7 +83,7 @@ largest value you feel comfortable leaving running through the motor continuousl
 
 ### **Setting max regen current**
 
-`dev0.config.max_regen_current`
+`dev0.config.max_regen_current = 20`
 
 ### **Setting Pole Pairs**
 `dev0.axis0.motor.config.pole_pairs = 7`
