@@ -112,3 +112,22 @@ setelah itu save configuration
 `dev0.axis0.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE`
 
 motor mengelurkan bunyi beep dan berputar ke kiri dan kekanan. jika motor tidak berputar maka masih ada error
+
+ubah ke mode velocity control
+`dev0.axis0.controller.config.control_mode = CONTROL_MODE_VELOCITY_CONTROL`
+
+lalu lakukan full calibration sequence
+
+selanjutnya masuk ke closed loop control
+
+`dev0.axis0.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL`
+
+lakukan pengetesan dengan menjalankan motor
+
+`dev0.axis0.controller.input_vel = 20`
+
+motor idle / standby
+
+`dev0.axis0.requested_state = AXIS_STATE_IDLE`
+
+untuk save config motor harus kondisi idle
