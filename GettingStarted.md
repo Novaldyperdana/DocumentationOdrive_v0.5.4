@@ -196,3 +196,5 @@ Setiap kali motor kondisi IDLE maka harus dikalibrasi dulu, cara agar gak berula
 ```
 dev0.axis0.motor.config.pre_calibrated = True
 ```
+
+setelah itu kalibrasi sekali dan selanjutnya gaperlu kalibrasi lagi
