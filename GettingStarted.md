@@ -48,16 +48,22 @@ Ini adalah langkah jika odrive belum ada firmwarenya (masih baru), jika sudah ad
 
 3. ketikkan command berikut untuk mengetahui berapa voltase dari motor kita
    
-   `dev0.vbus_voltage`
+   ```
+   dev0.vbus_voltage
+   ```
 
 ## **Perhatian**
 jika selama setting terdapat malfunction atau step fails, kita bisa mengetahui errornya dengan menggunakan prompt
 
-`running dump_errors(dev0)`
+```
+running dump_errors(dev0)
+```
 
 setelah error berhasil diatasi selanjutnya clear error
 
-`dev0.clear_errors()`
+```
+dev0.clear_errors()
+```
 
 clear error ini harus dilakukan setiap kali selesai mengecek error baru setelah itu bisa melanjutkan ke step berikutnya
 
@@ -68,42 +74,60 @@ in adalah step pertama yaitu konfigurasi motor dan melakukan kalibrasi. diasumsi
 
 ### **Setting Current Limit**
 
-`dev0.axis0.motor.config.current_lim = 60`
+```
+dev0.axis0.motor.config.current_lim = 60
+```
 
 ### **Setting Velocity Limit**
 (turn/s) / rotasi perdetik
 motor akan dibatasi maksimal 20 rotation/s
 
-`dev0.axis0.controller.config.vel_limit = 20`
+```
+dev0.axis0.controller.config.vel_limit = 20
+```
 
 ### **Callibration current**
 largest value you feel comfortable leaving running through the motor continuously when the motor is stationary.
 
-`dev0.axis0.motor.config.calibration_current = 4`
+```
+dev0.axis0.motor.config.calibration_current = 4
+```
 
 ### **Setting Negative Current**
 
-`dev0.config.dc_max_negative_current = -20`
+```
+dev0.config.dc_max_negative_current = -20
+```
 
 ### **Setting max regen current**
 
-`dev0.config.max_regen_current = 20`
+```
+dev0.config.max_regen_current = 20
+```
 
 ### **Setting Pole Pairs**
-`dev0.axis0.motor.config.pole_pairs = 7`
+```
+dev0.axis0.motor.config.pole_pairs = 7
+```
 
 ### **Setting Torque Constant**
 This is the ratio of torque produced by the motor per Amp of current delivered to the motor. This should be set to 8.27 / (motor KV).
 
-`dev0.axis0.motor.config.torque_constant = 1`
+```
+dev0.axis0.motor.config.torque_constant = 1
+```
 
 ### **Calibration Motor**
 save konfigurasi
-`odrv0.save_configuration()`
+```
+odrv0.save_configuration()
+```
 
 ketik command berikut untuk kalibrasi motor
 
-`dev0.axis0.requested_state = AXIS_STATE_MOTOR_CALIBRATION`
+```
+dev0.axis0.requested_state = AXIS_STATE_MOTOR_CALIBRATION
+```
 
 kalibrasi berhasil ditandai dengan bunyi beep panjang dan bunyi keras pada motor, jika tidak bunyi atau beep pelan maka masih ada error, cek errornya
 
@@ -113,31 +137,43 @@ jika motor tidak ada encoder maka motor tidak akan bisa berjalan
 ### **Set the encoder count per revolution [CPR] value**
 This is 4x the Pulse Per Revolution (PPR) value.
 
-`dev0.axis0.encoder.config.cpr = 4000`
+```
+dev0.axis0.encoder.config.cpr = 4000
+```
 
 setelah itu save configuration
 
 ## **Position Control**
 
-`dev0.axis0.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE`
+```
+dev0.axis0.requested_state = AXIS_STATE_FULL_CALIBRATION_SEQUENCE
+```
 
 motor mengelurkan bunyi beep dan berputar ke kiri dan kekanan. jika motor tidak berputar maka masih ada error
 
 ubah ke mode velocity control
-`dev0.axis0.controller.config.control_mode = CONTROL_MODE_VELOCITY_CONTROL`
+```
+dev0.axis0.controller.config.control_mode = CONTROL_MODE_VELOCITY_CONTROL
+```
 
 lalu lakukan full calibration sequence
 
 selanjutnya masuk ke closed loop control
 
-`dev0.axis0.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL`
+```
+dev0.axis0.requested_state = AXIS_STATE_CLOSED_LOOP_CONTROL
+```
 
 lakukan pengetesan dengan menjalankan motor
 
-`dev0.axis0.controller.input_vel = 20`
+```
+dev0.axis0.controller.input_vel = 20
+```
 
 motor idle / standby
 
-`dev0.axis0.requested_state = AXIS_STATE_IDLE`
+```
+dev0.axis0.requested_state = AXIS_STATE_IDLE
+```
 
 untuk save config motor harus kondisi idle
