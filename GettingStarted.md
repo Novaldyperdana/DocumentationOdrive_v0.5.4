@@ -9,8 +9,9 @@
 
 3. Install Odrivetool melalui terminal
 
-   `sudo pip3 install --upgrade odrive
-   `
+   ```
+   sudo pip3 install --upgrade odrive
+   ```
 
 ## **Firmware**
 Ini adalah langkah jika odrive belum ada firmwarenya (masih baru), jika sudah ada firmwarenya maka lewati langkah ini. Flashing Firmware menggunakan Stlink-v2
@@ -22,10 +23,11 @@ Ini adalah langkah jika odrive belum ada firmwarenya (masih baru), jika sudah ad
 
 ## **Start odrivetool**
 1. pada terminal ketikkan berikut untuk masuk ke menu odrivetool, odrive akan mengkonekan ke motor secara otomatis
-   `odrivetool`
+   ```odrivetool```
    
    maka akan muncul contoh berikut
    ```
+   
    novaldy@novaldy:~$ odrivetool
    ODrive control utility v0.6.9.post0
    Website: https://odriverobotics.com/
