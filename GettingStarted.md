@@ -23,7 +23,9 @@ Ini adalah langkah jika odrive belum ada firmwarenya (masih baru), jika sudah ad
 
 ## **Start odrivetool**
 1. pada terminal ketikkan berikut untuk masuk ke menu odrivetool, odrive akan mengkonekan ke motor secara otomatis
-   ```odrivetool```
+   ```
+   odrivetool
+    ```
    
    maka akan muncul contoh berikut
    ```
