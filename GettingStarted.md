@@ -93,6 +93,12 @@ largest value you feel comfortable leaving running through the motor continuousl
 dev0.axis0.motor.config.calibration_current = 4
 ```
 
+setting juga
+
+```
+dev0.axis0.motor.config.resistance_calib_max_voltage = 4
+```
+
 ### **Setting Negative Current**
 
 ```
@@ -142,6 +148,12 @@ This is 4x the Pulse Per Revolution (PPR) value.
 dev0.axis0.encoder.config.cpr = 4000
 ```
 
+Setting calib scan omega
+
+```
+dev0.axis0.encoder.config.calib_scan_omega = 25
+```
+
 setelah itu save configuration
 
 ## **Position Control**
@@ -178,3 +190,9 @@ dev0.axis0.requested_state = AXIS_STATE_IDLE
 ```
 
 untuk save config motor harus kondisi idle
+
+Setiap kali motor kondisi IDLE maka harus dikalibrasi dulu, cara agar gak berulang ulang tambahkan script
+
+```
+dev0.axis0.motor.config.pre_calibrated = True
+```
